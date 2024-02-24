@@ -49,18 +49,5 @@ To get started with the Event Ticket Booking Dapp, follow these steps:
 - **Backend**: Node.js
 - **Database**: Ethereum Blockchain
 - **Smart Contracts**: Solidity
-- **Authentication**: JWT (JSON Web Tokens)
-- **Payment Integration**: MetaMask
 
-## Contributing
-
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-Special thanks to [XYZ Organization] for their support and contributions to this project.
 
