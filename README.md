@@ -1,6 +1,6 @@
-# Event Ticket Booking Dapp
+# TicketHive - Ticket Booking Dapp
 
-Welcome to the Event Ticket Booking Dapp! This decentralized application (Dapp) allows users to book tickets for various events and concerts securely using blockchain technology.
+Welcome to the TicketHive - Ticket Booking Dapp! This decentralized application (Dapp) allows users to book tickets for various events and concerts securely using blockchain technology.
 
 ## Features
 
