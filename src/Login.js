@@ -26,12 +26,12 @@ function Login() {
 
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [account, setAccount] = useState("Don't have an account?");
-  const [sign, setSign] = useState("Sign up");
+  const [sign, setSign] = useState("Login");
 
   const switchState = () => {
     setIsLoginForm(!isLoginForm); // Toggle the mode
     setAccount(isLoginForm ? "Already have an account?" : "Don't have an account?");
-    setSign(isLoginForm ? "Login" : "Sign up");
+    setSign(isLoginForm ? "Sign up" : "Login");
   };
 
   return (

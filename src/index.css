@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 
 :root {
@@ -21,6 +22,43 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
+}
+
+.Header .navbar{
+  background-image: linear-gradient(to right, var(--accent-light), var(--accent));
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Header .nav-link{
+  color: var(--primary);
+}
+
+.Header .nav-link.active{
+  color: var(--primary-dark);
+}
+
+.Header .btn.login,
+.Header .btn.login:hover,
+.Header .btn.login:active,
+.Header .btn.login:visited{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: transparent;
+  border: none;
+  color: var(--background);
+}
+
+.Header .btn.signup,
+.Header .btn.signup:hover,
+.Header .btn.signup:active,
+.Header .btn.signup:visited{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: transparent;
+  border: solid 2px var(--background);
+  height: 95%;
+  align-items: center;
+  border-radius: 0%;
+  color: var(--background);
 }
 
 .Login {
