@@ -23,7 +23,7 @@ function Home() {
                 <div className="container-fluid p-5  rounded-5 homeViewMore">
                     <div className="container homeViewMoreContent">
                         <h3 className="display-5 fw-bold mt-2">Featured Events</h3>
-                        <p className="col-md-8">Be sure not to miss these events!</p>
+                        <p className="col-md-8 text-white">Be sure not to miss these events!</p>
                         <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3">
                             <div className="col">
                                 <div className="card p-2">
