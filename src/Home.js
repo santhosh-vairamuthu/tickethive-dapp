@@ -5,7 +5,7 @@ function Home() {
     
     return (
         <div className="container-fluid Home">
-            <div className="p-5 mb-4">
+            <div className="px-5 mt-5">
                 <div className="container-fluid py-5  rounded-3 HomeJumbotron">
                     <div className="container JumbotronContent">
                         <h1 className="display-5 fw-bold">Book your<br/>Tickets for Events !</h1>
@@ -18,6 +18,27 @@ function Home() {
                     </div>
                 </div>
             </div>
+
+            <div className="px-5 mt-5 mb-4 homeViewMore">
+                <div className="container-fluid py-5  rounded-3 ">
+                    <div className="container homeViewMoreContent">
+                        <h3 className="display-5 fw-bold">Featured Events</h3>
+                        <p className="col-md-8">Be sure not to miss these events!</p>
+                        <div className="row-3">
+                            <div className="card p-3 col-4 col-md-4 homeCards" style={{ width: "18rem" }}>
+                                <img src="https://placehold.co/600x400" className="card-img-top" alt="event" />
+                                <div className="card-body p-0 mt-2">
+                                    <h5 className="card-title">ARR Concert</h5>
+                                    <p className="card-text">Immerse in ARR's magical melodies for an unforgettable concert experience!</p>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                                    <a href="#" className="btn btn-primary">Get Tickets</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     
     );

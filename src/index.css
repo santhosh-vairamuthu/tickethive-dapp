@@ -151,9 +151,7 @@ small {font-size: 0.750rem; /* 12px */}
 
 
 .Home .HomeJumbotron{
-  background: var(--secondary-light);
-  backdrop-filter: blur( 10px );
-  -webkit-backdrop-filter: blur( 15px );
+
   border-radius: 10px;
 }
 
@@ -190,4 +188,8 @@ small {font-size: 0.750rem; /* 12px */}
 .Home .HomeJumbotron .JumbotronContent .EventRedirect.btn:active,
 .Home .HomeJumbotron .JumbotronContent .EventRedirect.btn:visited{
   background-color: var(--primary-dark);
+}
+
+.Home .homeViewMore{
+  background-color: var(--accent);
 }
