@@ -82,6 +82,11 @@ small {font-size: 0.750rem; /* 12px */}
   color: var(--background);
 }
 
+.Footer{
+  background-color: var(--accent-dark);
+  text-align: center;
+}
+
 .Login {
   width: 30%;
   margin: 0 auto;

@@ -4,7 +4,7 @@ function Header() {
     
     
     return (
-        <div className="container Header mt-2">
+        <header className="container Header mt-2">
             <nav className="navbar sticky-top ">
                 <div className="container-fluid d-flex justify-content-between align-items-center">
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -36,7 +36,7 @@ function Header() {
                     </ul>
                 </div>
             </nav>
-        </div>
+        </header>
 
     
     );
