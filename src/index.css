@@ -191,5 +191,37 @@ small {font-size: 0.750rem; /* 12px */}
 }
 
 .Home .homeViewMore{
-  background-color: var(--accent);
+  background-color: var(--secondary);
+  border: 2px solid var(--accent-dark);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Home .homeViewMore h3{
+  color: var(--accent-dark);
+}
+
+
+.Home .homeViewMore .card{
+  width: 18rem;
+  border-radius: 1%;
+  background-color: transparent;
+  border: 1px solid var(--accent-dark);
+}
+
+.Home .homeViewMore .card img{
+  border-radius: 0%;
+}
+.Home .homeViewMore .card .getTicket.btn{
+  margin-left: 10%;
+  width: 80%;
+  color: var(--background);
+  background-color: var(--primary);
+  border: none;
+  border-radius: 2%;
+}
+
+
+.Home .homeViewMore .card .getTicket.btn:active,
+.Home .homeViewMore .card .getTicket.btn:hover{
+  background-color: var(--primary-dark);
 }
