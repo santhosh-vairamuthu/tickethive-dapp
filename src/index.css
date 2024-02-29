@@ -80,10 +80,10 @@ small {font-size: 0.750rem; /* 12px */}
   color: var(--background);
 }
 
-.Header .btn.signup,
-.Header .btn.signup:hover,
-.Header .btn.signup:active,
-.Header .btn.signup:visited{
+.Header .btn.signUp,
+.Header .btn.signUp:hover,
+.Header .btn.signUp:active,
+.Header .btn.signUp:visited{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color: transparent;
   border: solid 2px var(--background);
@@ -307,3 +307,82 @@ small {font-size: 0.750rem; /* 12px */}
   color: var(--background);
 }
 
+.Account .eventsList{
+  border-radius: 0%;
+  border: 1px solid var(--accent-dark);
+  background-color: var(--secondary-light);
+  color: var(--accent-dark);
+}
+
+.Account .card .btn{
+  border-radius: 0%;
+  background-color: var(--primary);
+  color: var(--background);
+  border: 2px solid var(--primary-dark);  
+}
+
+.Account .card .btn:hover,
+.Account .card .btn:active{
+  background-color: var(--primary-dark);
+}
+
+.Account .card .btn i{
+  color: var(--background);
+}
+
+.Account .card  i{
+  color: var(--primary-dark);
+}
+
+.Account .modal .modal-content{
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 0%;
+}
+
+.Account .modal .modal-content{
+  background-color: transparent;
+  height: 100%;
+}
+
+.Account .modal .modal-content .modalBand,
+.Account .modal .modal-content .modalBandB{
+  background-color: var(--primary);
+  height: 3.8rem;
+  align-items: center;
+}
+
+.Account .modal .modal-content .modalBandB{
+  margin-top: auto;
+}
+
+.Account .modal .modal-content .modalBody h2{
+  min-height: 12vh;
+  background-color: var(--background);
+  color: var(--secondary-dark);
+
+}
+
+.Account .modal .modal-content .modalBody p{
+  color: var(--text);
+}
+
+.Account .modal .modal-content .modalBody p i{
+  color: var(--primary);
+}
+
+.Account .modal .modal-content .left{
+  background-color: var(--accent-light);
+  border-right: .18em dashed var(--accent-dark);
+  
+}
+.Account .modal .modal-content .right{
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--accent-light);
+  border-radius: 2px -2px 2px 2px;
+  border-left: .18em dashed var(--secondary-light);
+
+}

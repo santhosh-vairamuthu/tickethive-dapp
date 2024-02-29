@@ -31,7 +31,7 @@ function Header() {
                             <button className="btn login fw-bold">Log in</button>
                         </li>
                         <li className="nav-item">
-                            <button className="btn signup">Signup</button>
+                            <button className="btn signUp">Signup</button>
                         </li>
                     </ul>
                 </div>
