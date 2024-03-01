@@ -395,3 +395,86 @@ small {font-size: 0.750rem; /* 12px */}
   min-height: 75vh;
   max-height: 75vh;
 }
+
+.Details .title {
+  color: var(--secondary-dark);
+}
+
+.Details .titleDate i{
+  color: var(--primary-dark);
+}
+
+.Details .form{
+  background-color: var(--secondary-light);
+}
+
+.Details .form label{
+  font-weight: bolder;
+  color: var(--accent-dark);
+}
+
+.Details .form input,
+.Details .form select{
+  background-color: var(--background);
+}
+
+.Details .form input.form-control.iP{
+  border-radius: 5px !important;
+}
+
+.Details .form .btn.b1,
+.Details .form .btn.b2{
+  border-radius: 50% !important;
+  margin-left: 3% !important;
+  border: none;
+}
+
+.Details .form .btn.b1{
+  color: var(--background);
+  background-color: var(--text);
+}
+
+.Details .form .btn.b2{
+  columns: var(--text);
+  background-color: var(--background);
+}
+
+.Details .form .btn.submitForm{
+  width: 100%;
+  border-radius: 25px;
+  background-color: var(--primary);
+  color: var(--background);
+  border: none;
+}
+
+.Details .form .btn.submitForm:hover,
+.Details .form .btn.submitForm:hover:active{
+  background-color: var(--primary-dark);
+}
+
+.Details .form i{
+  color: var(--primary-dark);
+}
+
+.Details .aboutEvent{
+  font-size: 1.3rem;
+  color: var(--accent-dark);
+}
+
+.Details h5{
+  color: var(--secondary-dark);
+  font-size: 1.2rem;
+}
+
+.Details .instructions{
+  border: none;
+  background-color: var(--accent-light);
+}
+
+.Details .instructions h2{
+  color: var(--primary-dark);
+}
+
+.Details .instructions p{
+  font-size: 1rem;
+}
