@@ -386,3 +386,12 @@ small {font-size: 0.750rem; /* 12px */}
   border-left: .18em dashed var(--secondary-light);
 
 }
+
+
+.Details .banner{
+  background-image: url("https://placehold.co/800x600");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 75vh;
+  max-height: 75vh;
+}

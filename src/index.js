@@ -5,7 +5,8 @@ import './index.css';
 // import Login from './Login';
 // import Home from './Home';
 // import Events from './Events';
-import Account from './Account';
+// import Account from './Account';
+import Details from './Details';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -14,7 +15,7 @@ root.render(
   <React.StrictMode>
     <>
     <Header />
-    <Account />
+    <Details />
     <Footer/>
     </>
   </React.StrictMode>
