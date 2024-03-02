@@ -11,7 +11,8 @@ const Events = () => {
 
             <h3 className='mt-5 mb-2'>Showing all 5 events</h3>
             
-            <div className=' p-5 row row-cols-2 '>
+            <div className=' p-5 row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2'>
+
                 <div className='col'>
                     <div className="card mb-3 col p-1 rounded-3" >
                         <div className="row g-0">
@@ -51,7 +52,6 @@ const Events = () => {
                         </div>
                     </div>
                 </div>
-                
                 <div className='col'>
                     <div className="card mb-3 col p-1 rounded-3" >
                         <div className="row g-0">
@@ -71,7 +71,6 @@ const Events = () => {
                         </div>
                     </div>
                 </div>
-                
                 <div className='col'>
                     <div className="card mb-3 col p-1 rounded-3" >
                         <div className="row g-0">
@@ -91,7 +90,6 @@ const Events = () => {
                         </div>
                     </div>
                 </div>
-                
                 <div className='col'>
                     <div className="card mb-3 col p-1 rounded-3" >
                         <div className="row g-0">

@@ -34,10 +34,13 @@ function Login() {
   };
 
   return (
-    <div className="container Login">
-      <h3 className='fs-3 mt-2 fw-bold'>{sign}</h3>
-      {isLoginForm ? LoginForm : SignUpForm}
+    <div className=" row justify-content-center mt-5">
+      <div className='col-8 col-sm-8 col-md-6 col-lg-4 Login mt-5'>
+        <h3 className='fs-3 mt-2 fw-bold'>{sign}</h3>
+        {isLoginForm ? LoginForm : SignUpForm}
+
       <h5 className='mt-1'><span>{account}<button className="switch" onClick={switchState}>{sign === "Login" ? "Sign up" : "Login"}</button></span></h5>
+      </div>
     </div>
   );
 }

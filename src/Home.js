@@ -6,9 +6,9 @@ function Home() {
     return (
         <div className="container-fluid Home">
             <div className="px-5 mt-5">
-                <div className="container-fluid py-5  rounded-3 HomeJumbotron">
-                    <div className="container JumbotronContent">
-                        <h1 className="display-5 fw-bold">Book your<br/>Tickets for Events !</h1>
+                <div className="container-fluid py-5  rounded-3 HomeJumbotron row-col-1 ">
+                    <div className="container JumbotronContent col ">
+                        <h1 className="display-5 fw-bold">Book your<br/>Tickets for Events!</h1>
                         <ul className="mt-3">
                             <li><p className="col-md-8">Safe, Secure, Reliable ticketing!</p></li>
                             <li><p className="col-md-8">Your Ticket to live entertainment!</p></li>
@@ -24,8 +24,8 @@ function Home() {
                     <div className="container homeViewMoreContent">
                         <h3 className="display-5 fw-bold mt-2">Featured Events</h3>
                         <p className="col-md-8 text-white">Be sure not to miss these events!</p>
-                        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3">
-                            <div className="col">
+                        <div className="row">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
                                 <div className="card p-2">
                                     <img src="https://placehold.co/600x400" className="card-img-top" alt="event" />
                                     <div className="card-body p-0 mt-2">
@@ -37,7 +37,7 @@ function Home() {
                                 </div>
                             </div>
 
-                            <div className="col">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-4  mb-4">
                                 <div className="card p-2">
                                     <img src="https://placehold.co/600x400" className="card-img-top" alt="event" />
                                     <div className="card-body p-0 mt-2">
@@ -50,7 +50,7 @@ function Home() {
                             </div>
 
 
-                            <div className="col">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-4  mb-4">
                                 <div className="card p-2">
                                     <img src="https://placehold.co/600x400" className="card-img-top" alt="event" />
                                     <div className="card-body p-0 mt-2">

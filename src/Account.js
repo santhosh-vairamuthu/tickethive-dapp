@@ -6,9 +6,9 @@ const Account = () => {
             <div className="container py-5 ">
                 <h1 className="fs-1 mt-5">Hello John Doe,</h1>
                 <hr className="border border-dark border-2 opacity-75 mt-5"></hr>
-                <div className="container p-2 row">
-                    <div className="col">
-                        <div className="card text-center eventsList" style={{width : "50%", marginLeft : "25%"}}>
+                <div className="container p-2 row justify-content-center">
+                    <div className="col-md-6 col-sm-12 col-12 col-lg-4">
+                        <div className="card text-center eventsList">
                             <div className="card-body">
                                 <h5 className="card-title">ARR Concert</h5>
                                 <p className="card-text" style={{marginBottom : "-0.2%"}}><i class="bi bi-geo-alt-fill"></i> <small className="text-body-secondary fw-bolder"> Nehru Stadium, Chennai</small></p>
@@ -29,31 +29,31 @@ const Account = () => {
                 <div className="modal-dialog modal-dialog-centered modal-xl">
                     <div className="modal-content ">
                         <div className="container px-1 row">
-                            <div className="container col-8 left p-0">
+                            <div className="container col-6 col-md-6 col-lg-8 col-sm-6 left p-0">
                                 <div className="container modalBand d-flex">
-                                    <h2 className="fs-2 text-white fw-bold">Ticket Hive</h2>
+                                    <h2 className="fs-3 text-white fw-bold">Ticket Hive</h2>
                                     <h2 className="fs-3 ms-auto text-white-50">Entry pass</h2>
                                 </div>
                                 <div className="container modalBody p-0">
-                                    <h2 className="p-3">ARR Concert</h2>
+                                    <h2 className="p-3 fs-1">ARR Concert</h2>
                                     <div className="container-flex row p-3">
-                                        <div className="col-6">
+                                        <div className="col-6 col-sm-12 col-md-12 col-lg-4">
                                             <h5 className="fs-5 fw-light text-white">NAME</h5>
                                             <p className="fs-2 fw-bold">John Doe</p>
                                         </div>
-                                        <div className="col-2">
+                                        <div className="col-6 col-sm-6 col-md-4 col-lg-4">
                                             <h5 className="fs-5 fw-light text-white">CLASS</h5>
                                             <p className="fs-2 fw-bold">First</p>
                                         </div>
-                                        <div className="col-2">
+                                        <div className=" col-6 col-sm-6 col-md-4 col-lg-4">
                                             <h5 className="fs-5 fw-light text-white">GATE</h5>
                                             <p className="fs-2 fw-bold">F12</p>
                                         </div>
-                                        <div className="col-2">
+                                        <div className="col-6 col-sm-6 col-md-4 col-lg-4">
                                             <h5 className="fs-5 fw-light text-white">SEAT</h5>
                                             <p className="fs-2 fw-bold">144</p>
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12 col-sm-12 col-md-4 col-lg-4">
                                             <h5 className="fs-5 fw-lighter text-white">ID</h5>
                                             <p className="fs-2 fw-bold">v65z4df65d6</p>
                                         </div>
@@ -66,12 +66,12 @@ const Account = () => {
                                 <div className="container modalBandB d-flex mb-0">
                                 </div>
                             </div>
-                            <div className="container col-4 right p-0">
+                            <div className="container col-6 col-md-6 col-lg-4 col-sm-6 right p-0">
                                 <div className="container modalBand d-flex justify-content-center">
                                     <h2 className="fs-2  text-white">Ticket Hive</h2>
                                 </div>
                                 <div className="container modalBody p-0">
-                                    <h2 className="p-3">ARR Concert</h2>
+                                    <h2 className="p-3 fs-1">ARR Concert</h2>
                                     <div className="container-flex  p-3 row">
                                         <div className="col-12">
                                             <h5 className="fs-5 fw-lighter text-white">Name</h5>
@@ -79,7 +79,7 @@ const Account = () => {
                                         </div>
                                         <div className="col-12">
                                             <h5 className="fs-5 fw-lighter text-white">ID</h5>
-                                            <p className="fs-2 fw-bold">v65z4df65d6</p>
+                                            <p className="fs-3 fw-bold">v65z4df65d6</p>
                                         </div>
                                     </div>
                                 </div>

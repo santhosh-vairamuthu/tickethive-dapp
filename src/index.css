@@ -100,10 +100,6 @@ small {font-size: 0.750rem; /* 12px */}
 }
 
 .Login {
-  width: 30%;
-  margin: 0 auto;
-  margin-top: 10%;
-  padding: 20px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -166,15 +162,9 @@ small {font-size: 0.750rem; /* 12px */}
   outline: none;
 }
 
-
 .Home .HomeJumbotron{
 
   border-radius: 10px;
-}
-
-.Home .HomeJumbotron .JumbotronContent{
-  width: 50%;
-  margin-left: 25%;
 }
 
 .Home .HomeJumbotron .JumbotronContent h1{
@@ -187,10 +177,6 @@ small {font-size: 0.750rem; /* 12px */}
   font-size: 0.9rem;
   list-style: disc;
   color: #333;
-}
-
-.Home .HomeJumbotron .JumbotronContent ul li{
-  margin-bottom: -3%;
 }
 
 .Home .HomeJumbotron .JumbotronContent .EventRedirect.btn{
@@ -373,6 +359,9 @@ small {font-size: 0.750rem; /* 12px */}
 }
 
 .Account .modal .modal-content .left{
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--accent-light);
   border-right: .18em dashed var(--accent-dark);
   

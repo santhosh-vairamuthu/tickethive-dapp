@@ -13,9 +13,9 @@ const Details = () => {
                     <h2 className='fs-1 fw-semibold title'>ARR Concert</h2>
                     <p className="card-text titleDate"><i class="bi bi-calendar"></i> <small className="text-body-secondary fw-bolder"> 13<sup>th</sup>July 2024</small></p>
                     </div>
-                <div class='container col-8 col-md-8 col-lg-8 rounded-5 banner col-sm-12 mb-2'>
+                <div class='container col-12 col-md-12 col-lg-8 rounded-5 banner col-sm-12 mb-2'>
                 </div>
-                <div className='container col-4 col-md-4 col-lg-4 col-sm-12 '>
+                <div className='container col-12 col-md-12 col-lg-4 col-sm-12 '>
                     <form className='form p-3 rounded-4'>
                         <div className="mb-3">
                             <label for="name" className="form-label">Name</label>
@@ -54,31 +54,31 @@ const Details = () => {
                 <div className='container stars mt-5 mb-2'>
                     <h5 className=''>Artists</h5>
                     <div className='container row'>
-                        <div className='col-3 mb-2'>
+                        <div className='col-6 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
@@ -89,31 +89,31 @@ const Details = () => {
                 <div className='container stars mt-5 mb-2'>
                     <h5 className=''>Special Guests</h5>
                     <div className='container row'>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
                             </div>
                         </div>
-                        <div className='col-3 mb-2'>
+                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2'>
                             <div className="d-flex flex-row align-items-center gap-3">
                                 <img src="https://placehold.co/75x75" className="rounded-circle" alt='artist'/>
                                 <p className="fw-normal fs-5">AR Rahman</p>
