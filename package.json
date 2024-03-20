@@ -34,5 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Welcome to the TicketHive - Ticket Booking Dapp! This decentralized application (Dapp) allows users to book tickets for various events and concerts securely using blockchain technology.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

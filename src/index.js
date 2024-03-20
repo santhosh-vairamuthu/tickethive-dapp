@@ -1,24 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
+import App from './App';
 import './index.css';
-// import App from './App';
-import Login from './Login';
-import Home from './Home';
-import Events from './Events';
-import Account from './Account';
-import Details from './Details';
-import Header from './Header';
-import Footer from './Footer';
+import { EmailProvider } from './EmailContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <>
-    <Header />
-    <Login />
-    <Footer/>
-    </>
+    <EmailProvider>
+      <App />
+    </EmailProvider>
   </React.StrictMode>
 );
-
-
