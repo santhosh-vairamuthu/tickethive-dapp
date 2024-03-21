@@ -1,6 +1,6 @@
 
 import { createContext, useContext, useState } from 'react';
-
+import React from 'react';
 const EmailContext = createContext();
 
 export const EmailProvider = ({ children }) => {
