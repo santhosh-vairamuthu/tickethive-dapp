@@ -2,7 +2,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { useState,useEffect } from "react";
-
+import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 function Home() {

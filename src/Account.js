@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEmail } from "./EmailContext"; 
-
+import React from "react";
 import Header from './Header';
 import Footer from './Footer';
 const Account = () => {

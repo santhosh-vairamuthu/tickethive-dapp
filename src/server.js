@@ -29,7 +29,6 @@ app.get('/getevents', async (req, res) => {
   });
   app.get('/searchevents', async (req, res) => {
     try {
-        console.log(req.query.prompt);
       const result = await db.query('SELECT * FROM concerts where concert_name ILIKE $1',["%"+req.query.prompt+"%"]);
       res.json(result.rows);
     } catch (error) {
@@ -39,7 +38,6 @@ app.get('/getevents', async (req, res) => {
   });
   app.get('/getdetails', async (req, res) => {
     try {
-        console.log(req.query.id);
       const result = await db.query('SELECT * FROM concerts where concert_id=$1',[req.query.id]);
       res.json(result.rows);
     } catch (error) {
@@ -54,7 +52,6 @@ app.get('/getevents', async (req, res) => {
       const query = 'INSERT INTO users (name, email, password) VALUES ($1, $2, $3)';
       await db.query(query, [name, email, hashedPassword]);
       
-      console.log(req.body);
       res.status(201).send(email);
     } catch (error) {
       console.error('Error registering user here:', error);
@@ -67,7 +64,6 @@ app.get('/getevents', async (req, res) => {
       const hashedPassword = await bcrypt.hash(password, 10);
       const query = 'Select password from users where email ilike $1';
       const pass=await db.query(query, [email]);
-      console.log(pass.rows[0].password);
       if(hashedPassword===pass.rows[0].password){
         res.status(201).send('User login');
       }
