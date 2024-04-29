@@ -1,10 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useEmail } from "./EmailContext"; 
-
+import { useEmail } from "./EmailContext";
+import contractABI from "./contractABI.js";
+import Web3 from 'web3'; 
 import Header from './Header';
 import Footer from './Footer';
+
 const Details = () => {
     const { email } = useEmail(); 
     const { concert_id } = useParams();
@@ -13,14 +17,44 @@ const Details = () => {
     const increaseCount = () => { setCount(count + 1); };
     const decreaseCount = () => { if (count > 1) setCount(count - 1); };
     let [events, setEvents] = useState([]);
-    const nav = useNavigate();
+    const nav = useNavigate();// Check for Metamask
+    const [contract1, setContract1] = useState(null);
+    const [defaultAccount,setDefaultAccount]=useState(null);
+
+    useEffect(() => {
+        const initWeb3 = async () => {
+            if (window.ethereum) {
+                try {
+                    console.log("Initializing Web3...");
+                    const accounts=await window.ethereum.request({ method: "eth_requestAccounts" });
+                    setDefaultAccount(accounts[0]);
+                    window.web3 = new Web3(window.ethereum);
+                    const contract=await loadContract();
+                    console.log(contract);
+                    setContract1(contract);
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            }
+        };
+        initWeb3();
+    }, []);
+
+    const loadContract=async()=>{
+        console.log("hello");
+        const contractAddress ="<PASTE YOUR CONTRACT ADDRESS HERE>";;
+        const contract=new window.web3.eth.Contract(contractABI,contractAddress);
+        console.log(contract);
+        return contract;
+    }
+
     useEffect(() => {
         res();
-    }, [id]);
+    }, [setId]);
 
     const res = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/getdetails', { params: { id: id } });
+            const response = await axios.get('http://localhost:5001/getdetails', { params: { id: id } });
             const parsedData = response.data.map(event => ({
                 ...event,
                 artists_images: JSON.parse(event.artists_images),
@@ -33,33 +67,63 @@ const Details = () => {
         }
     };
     
+    // Function to check availability and handle booking
+    const checkAvailability = async (eventID, selectedClass, requestedSeats) => {
+        try {
+            const response = await axios.post('http://localhost:5001/checkAvailability', {
+                eventID: eventID,
+                selectedClass: selectedClass,
+                requestedSeats: requestedSeats
+            });
+            if (response.data.available) {
+                // Proceed with booking
+                bookEvent(eventID, selectedClass, requestedSeats);
+            } else {
+                // Raise an alert indicating no available seats
+                alert('Sorry, there are no available seats in the selected class.');
+            }
+        } catch (error) {
+            console.error('Error checking availability:', error);
+        }
+    };
 
-    const check = async (e) => {
+    // Function to handle booking
+    const bookEvent = async (eventID, selectedClass, requestedSeats) => {
+            try {
+                if (!contract1) {
+                    console.error("Contract not initialized.");
+                    return;
+                }
+                await axios.post('http://localhost:5001/bookevent', { email: email,id:eventID, name: "Dummy Name", persons: requestedSeats, clas: selectedClass });
+                await contract1.methods.bookEvent(eventID, "Dummy Name", requestedSeats, selectedClass).send({ from: defaultAccount });
+                nav("../account");
+            } catch(error) {
+                console.error("Error booking events:", error);
+            }
+        
+    }
+
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         const formData = {
             name: e.target.elements.name.value,
             persons: e.target.elements.tickets.value,
             class: e.target.elements.class.value
         };
-        if (email) {
-            console.log(formData);
-            try {
-                 await axios.post('http://localhost:5000/bookevent', { id: id, email: email, name: formData.name, persons: formData.persons, clas: formData.class });
-                nav("../account");
-            } catch {
-                console.log("Error booking events:");
-            }
+        const { name, persons, class: selectedClass } = formData;
+        if (name && persons && selectedClass) {
+            checkAvailability(id, selectedClass, persons);
         } else {
-            nav("../login");
+            alert('Please fill out all fields.');
         }
     }
 
     return (
         <div>
-        <Header/>
+            <Header/>
             <div className='container Details'>
                 {(events && events.length > 0) && events.map((event) => (
-                    <div>
+                    <div key={event.concert_id}>
                         <div className='row row-cols-2 container-fluid mt-4 p-2'>
                             <div className='container col-12 mt-4 mb-4'>
                                 <h2 className='fs-1 fw-semibold title'>{event.concert_name}</h2>
@@ -69,7 +133,7 @@ const Details = () => {
                                 <img src={event.concert_image} width={720} height={450} style={{ borderRadius: '5%' }} alt="Concert"/>
                             </div>
                             <div className='container col-12 col-md-12 col-lg-4 col-sm-12 '>
-                                <form className='form p-3 rounded-4' onSubmit={check}>
+                                <form className='form p-3 rounded-4' onSubmit={handleFormSubmit}>
                                     <div className="mb-3">
                                         <label htmlFor="name" className="form-label">Name</label>
                                         <input type="text" className="form-control" id="name" name="name" required/>
@@ -86,9 +150,8 @@ const Details = () => {
                                         <label htmlFor="class" className="form-label">Class</label>
                                         <select className="form-select" name="class" id="class" required>
                                             <option value="">Select a class</option>
-                                            <option value="First">First Class</option>
-                                            <option value="Second">Second Class</option>
-                                            <option value="Third">Third Class</option>
+                                            <option value="c1">Ordinary Class</option>
+                                            <option value="c2">Premium Class</option>
                                         </select>
                                     </div>
                                     <div className="mb-3">
@@ -103,50 +166,47 @@ const Details = () => {
                             </div>
                         </div>
                         <div className='container p-4'>
-                <p className='aboutEvent mt-2 '>{event.about_concert}</p>
-                <div className='container stars mt-5 mb-2'>
-                    <h5 className=''>Artists</h5>
-                   
-                    <div className='container row'>
-                    {event.artists_images.map((image, index) => (
-    <div className='col-6 col-sm-6 col-md-3 col-lg-3 mb-2' key={index}>
-        <div className="d-flex flex-row align-items-center gap-3">
-            <img src={image} className="rounded-circle" alt='artist' width={75} height={75}/>
-            <p className="fw-normal fs-5">{event.artists_names[index]}</p>
-        </div>
-    </div>
-))}
-
-                    </div>
-                </div>
-                <div className='container stars mt-5 mb-2'>
-                    <h5 className=''>Special Guests</h5>
-                    <div className='container row'>
-                    {event.special_guests_images.map((image, index) => (
-    <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2' key={index}>
-        <div className="d-flex flex-row align-items-center gap-3">
-            <img src={image} className="rounded-circle" alt='artist' width={75} height={75}/>
-            <p className="fw-normal fs-5">{event.special_guests_names[index]}</p>
-        </div>
-    </div>
-))}
-</div>
-                </div>
-                <div className='container rounded-2 p-5 instructions'>
-                    <h2 className='fs-5 fs-bolder'>Instructions</h2>
-                    <hr/>
-                    <ol>
-                    {event.instructions.map((instruction)=>(
-                        <li><p className='fw-lighter'>{instruction}</p></li>
-                    ))}
-                    </ol>
-
-                </div>
-            </div>
+                            <p className='aboutEvent mt-2 '>{event.about_concert}</p>
+                            <div className='container stars mt-5 mb-2'>
+                                <h5 className=''>Artists</h5>
+                                <div className='container row'>
+                                    {event.artists_images.map((image, index) => (
+                                        <div className='col-6 col-sm-6 col-md-3 col-lg-3 mb-2' key={index}>
+                                            <div className="d-flex flex-row align-items-center gap-3">
+                                                <img src={image} className="rounded-circle" alt='artist' width={75} height={75}/>
+                                                <p className="fw-normal fs-5">{event.artists_names[index]}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className='container stars mt-5 mb-2'>
+                                <h5 className=''>Special Guests</h5>
+                                <div className='container row'>
+                                    {event.special_guests_images.map((image, index) => (
+                                        <div className='col-12 col-sm-6 col-md-3 col-lg-3 mb-2' key={index}>
+                                            <div className="d-flex flex-row align-items-center gap-3">
+                                                <img src={image} className="rounded-circle" alt='artist' width={75} height={75}/>
+                                                <p className="fw-normal fs-5">{event.special_guests_names[index]}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className='container rounded-2 p-5 instructions'>
+                                <h2 className='fs-5 fs-bolder'>Instructions</h2>
+                                <hr/>
+                                <ol>
+                                    {event.instructions.map((instruction, index) => (
+                                        <li key={index}><p className='fw-lighter'>{instruction}</p></li>
+                                    ))}
+                                </ol>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
-        <Footer/>
+            <Footer/>
         </div>
     );
 }

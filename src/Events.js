@@ -11,7 +11,7 @@ const Events = ({email}) => {
     },[]);
     const res=async()=>{
         try {
-            const response = await axios.get('http://localhost:5000/getevents');
+            const response = await axios.get('http://localhost:5001/getevents');
             setEvents(response.data);
           } catch (error) {
             console.error('Error fetching data:', error);
@@ -20,7 +20,7 @@ const Events = ({email}) => {
     const trigger=async(inputValue)=>{
             try {
                 console.log(inputValue);
-              const response = await axios.get('http://localhost:5000/searchevents', {
+              const response = await axios.get('http://localhost:5001/searchevents', {
                 params: { prompt: inputValue }
               });
               setEvents(response.data);

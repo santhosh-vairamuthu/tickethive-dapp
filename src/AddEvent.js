@@ -17,11 +17,13 @@ function AddEvent() {
   const [specialGuestImages, setSpecialGuestImages] = useState([]);
   const [specialGuestNames, setSpecialGuestNames] = useState([]);
   const [instructions, setInstructions] = useState([]);
+  const [c1, setC1] = useState(0);
+  const [c2, setC2] = useState(0);
 const nav=useNavigate();
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-        await axios.post('http://localhost:5000/addevent', { name:concertName,place:concertPlace,time:concertTime,date:concertDate,about:aboutConcert,image:concertImageUrl,artimg:artistImages,artnam:artistNames,speimg:specialGuestImages,spenam:specialGuestNames,ins: instructions});
+        await axios.post('http://localhost:5001/addevent', { name:concertName,place:concertPlace,time:concertTime,date:concertDate,about:aboutConcert,image:concertImageUrl,artimg:artistImages,artnam:artistNames,speimg:specialGuestImages,spenam:specialGuestNames,ins: instructions,c1:c1,c2:c2});
         alert("Event Added Successfully");
        nav("/event");
    } catch {
@@ -158,7 +160,32 @@ const nav=useNavigate();
               setInstructions(e.target.value.split(","))
             }
           />
+          
         </Form.Group>
+
+        <Form.Group controlId="c1">
+          <Form.Label>Seats in Class 1</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Number of seats in class 1"
+            value={c1}
+            onChange={(e) => setC1(e.target.value)}
+          />
+        </Form.Group>
+        <br/>
+
+
+        <Form.Group controlId="c2">
+            <Form.Label>Seats in Class 2</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Number of seats in class 2"
+              value={c2}
+              onChange={(e) => setC2(e.target.value)}
+            />
+          </Form.Group>
+
+
         <br/>
         <Button variant="primary" type="submit">
           Submit

@@ -7,17 +7,17 @@ import Header from './Header';
 import Footer from './Footer';
 const Account = () => {
     const navigate = useNavigate();
-    const { email } = useEmail(); 
+    const { email } = useEmail();
     const [tickets, setTickets] = useState([]);
     const [name, setName] = useState("");
     useEffect(() => {
         const fetchTickets = async () => {
             if (email !== "") {
                 try {
-                    const response = await axios.get("http://localhost:5000/account", {
+                    const response = await axios.get("http://localhost:5001/account", {
                         params: { email }
                     });
-                    const res = await axios.get("http://localhost:5000/getName", {
+                    const res = await axios.get("http://localhost:5001/getName", {
                         params: { email }
                     });
                     setName(res.data[0].name);
@@ -27,11 +27,8 @@ const Account = () => {
                     }));
                     setTickets(ticketsWithConcertDetails);
                 } catch (error) {
-                    console.error("Error fetching account:", error);
-                    navigate("../login");
+                    console.log(error)
                 }
-            } else {
-                navigate("../login");
             }
         };
 
@@ -40,7 +37,7 @@ const Account = () => {
 
     const fetchConcertDetails = async (concert_id) => {
         try {
-            const response = await axios.get("http://localhost:5000/getconcertdetails", {
+            const response = await axios.get("http://localhost:5001/getconcertdetails", {
                 params: { concert_id }
             });
             return response.data[0]; 

@@ -24,12 +24,12 @@ function Header() {
             <li className="nav-item fw-bolder">
               <Link to="/event" className="nav-link">Events</Link>
             </li>
-            {email==="2112059@nec.edu.in" && (
+            {email==="admin@test.com" && (
               <li className="nav-item fw-bolder">
                 <Link to="/admin" className="nav-link">Add Event</Link>
               </li>
             )}
-            {email && email!=="2112059@nec.edu.in" && (
+            {email && email!=="admin@test.com" && (
               <li className="nav-item fw-bolder">
                 <Link to="/account" className="nav-link">Account</Link>
               </li>
