@@ -39,9 +39,9 @@ To get started with the Event Ticket Booking Dapp, follow these steps:
     ```
 5.Run the backend:
 
-    '''
+    ```
     nodemon src/server.js
-    '''
+    ```
 
 6. Access the Dapp:
 
@@ -83,3 +83,15 @@ To make the TicketHive Dapp work seamlessly, ensure the following configurations
 
 - **Smart Contract**: `solidity/ticket.sol`
 - **MySQL Database Schema**: `database/schema.sql`
+
+## Technologies Used
+
+The TicketHive Dapp leverages a variety of technologies to provide a seamless and secure ticket booking experience:
+
+- **Node.js**: Node.js is used for the backend server environment, providing a runtime environment for executing JavaScript code outside the browser.
+- **React.js**: React.js is utilized for building the frontend user interface, allowing for the creation of dynamic and interactive components.
+- **Express.js**: Express.js is a web application framework for Node.js, used to build the backend RESTful API endpoints and handle HTTP requests.
+- **Web3.js**: Web3.js is a JavaScript library that interacts with Ethereum nodes, enabling communication with the Ethereum blockchain and smart contracts.
+- **MySQL**: MySQL is a relational database management system used for storing and managing data related to users, events, tickets, etc.
+- **Bootstrap**: Bootstrap is a front-end framework used for designing and styling responsive web pages, providing a sleek and modern user interface.
+- **Solidity**: Solidity is the programming language used for writing smart contracts on the Ethereum blockchain, facilitating the execution of ticket transactions securely and transparently.
