@@ -17,7 +17,7 @@ const Details = () => {
     const increaseCount = () => { setCount(count + 1); };
     const decreaseCount = () => { if (count > 1) setCount(count - 1); };
     let [events, setEvents] = useState([]);
-    const nav = useNavigate();// Check for Metamask
+    const nav = useNavigate();
     const [contract1, setContract1] = useState(null);
     const [defaultAccount,setDefaultAccount]=useState(null);
 
