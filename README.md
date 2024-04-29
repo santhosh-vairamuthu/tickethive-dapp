@@ -51,8 +51,35 @@ To get started with the Event Ticket Booking Dapp, follow these steps:
 
 - **Blockchain**: Ethereum, Solidity
 - **Frontend**: React.js
-- **Backend**: Node.js
+- **Backend**: Node.js (Express Framework)
 - **Database**: Ethereum Blockchain
 - **Smart Contracts**: Solidity
 
+## Deployment Details
 
+The TicketHive Dapp is deployed on the Ethereum test network using Remix IDE and MetaMask for wallet integration. The smart contract code is written in Solidity and deployed to the test network using Remix. The contract address and ABI (Application Binary Interface) are then updated in the frontend code for interaction with the deployed contract.
+
+### Remix IDE Deployment Steps:
+
+1. Open Remix IDE (https://remix.ethereum.org/) in your web browser.
+2. Copy the smart contract code from `solidity/ticket.sol` and paste it into the Remix editor.
+3. Compile and deploy the contract using the appropriate compiler version.
+4. After deployment, copy the contract address and update it in the `src/Details.js` file.
+5. Obtain the ABI from Remix and update it in the `src/contractABI.js` file.
+
+### SepoliaETH Usage:
+
+SepoliaETH is used as the Ethereum test network for deploying and testing the smart contract. It provides a sandbox environment for developers to interact with Ethereum blockchain without using real Ether.
+
+## Additional Configurations
+
+To make the TicketHive Dapp work seamlessly, ensure the following configurations:
+
+- Change the ABI in Remix IDE and update it in the `src/contractABI.js` file.
+- Update the contract address in the `src/Details.js` file after deployment.
+- Modify the MySQL database connection details in the `src/server.js` file to match your environment.
+
+## Files Overview
+
+- **Smart Contract**: `solidity/ticket.sol`
+- **MySQL Database Schema**: `database/schema.sql`

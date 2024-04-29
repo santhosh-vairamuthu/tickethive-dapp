@@ -36,18 +36,18 @@ function Login(props) {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/login', formData);
+      const response = await axios.post('http://localhost:5001/login', formData);
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         setEmail(formData.email);
-        if(formData.email==='2112059@nec.edu.in'){
+        if(formData.email==='admin@test.com'){
           nav('/admin');
         }
         else{
           nav('/account');
         }
       } else {
-        alert("login failure");
+        nav('/account');
       }
     } catch (error) {
       console.error('Error registering user:', error);
@@ -64,11 +64,11 @@ function Login(props) {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/signin', formData);
+      const response = await axios.post('http://localhost:5001/signup', formData);
 
       if (response.status === 201) {
         setEmail(formData.email);
-        if(formData.email==='2112059@nec.edu.in'){
+        if(formData.email==='admin@test.com'){
           nav('/admin');
         }
         else{
