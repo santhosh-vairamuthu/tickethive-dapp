@@ -37,12 +37,11 @@ To get started with the Event Ticket Booking Dapp, follow these steps:
     ```
     npm start
     ```
-5.Run the backend:
+5. Run the backend:
 
     ```
     nodemon src/server.js
     ```
-
 6. Access the Dapp:
 
     Open your web browser and navigate to `http://localhost:3000` to access the Event Ticket Booking Dapp.
